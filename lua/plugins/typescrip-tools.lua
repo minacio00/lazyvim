@@ -1,0 +1,23 @@
+-- return {
+--   {
+--     "pmizio/typescript-tools.nvim",
+--     ft = {
+--       "javascript",
+--       "javascriptreact",
+--       "typescript",
+--       "typescriptreact",
+--       "typescript.tsx",
+--     },
+--     dependencies = {
+--       "nvim-lua/plenary.nvim",
+--       "neovim/nvim-lspconfig", -- still needed for the setup call
+--     },
+--     opts = {
+--       -- plugin-specific settings go under `settings`
+--       settings = {
+--         -- memory limit in megabytes, or "auto"
+--         tsserver_max_memory = 1024,
+--       },
+--     },
+--   },
+-- }
