@@ -18,6 +18,25 @@ local function augroup(name)
   return vim.api.nvim_create_augroup("lazyvim_" .. name, { clear = true })
 end
 
+vim.api.nvim_create_autocmd("User", {
+  pattern = "LazyVimStarted",
+  once = true,
+  callback = function()
+    -- Only when launching without files: don't touch `nvim somefile`
+    if vim.fn.argc(-1) > 0 then
+      return
+    end
+    -- Avoid headless/embedded sessions
+    if #vim.api.nvim_list_uis() == 0 or vim.g.started_by_firenvim then
+      return
+    end
+
+    -- Create Tab 2 with a terminal and enter insert mode
+    vim.cmd("tabnew | terminal")
+    vim.cmd("startinsert")
+  end,
+})
+
 -- Django Python file settings
 vim.api.nvim_create_autocmd("FileType", {
   group = augroup("django_python"),
