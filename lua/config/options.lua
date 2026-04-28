@@ -7,3 +7,11 @@ vim.opt.relativenumber = true
 vim.opt.guicursor = "n:block,i:ver25,v:ver25"
 -- vim.b.minianimate_disable = true
 vim.g.snacks_animate = false
+
+vim.diagnostic.config({
+  virtual_text = true,
+  signs = true,
+  underline = true,
+  update_in_insert = false,
+  severity_sort = true,
+})
