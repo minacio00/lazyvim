@@ -1,12 +1,5 @@
 return {
   {
-    "seblyng/roslyn.nvim",
-    ft = "cs",
-    opts = {
-      filewatching = "off",
-    },
-  },
-  {
     "mason-org/mason.nvim",
     opts = {
       registries = {
